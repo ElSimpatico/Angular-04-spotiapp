@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 
-const TOKEN = 'Bearer BQAlf-USQLeeMGUEFRgT2zjHuBTVzZVBZOLjKiIKgXMSbCB2EzWRfYeTvFzuz_0PmxWCDX8UDtGcTVKdgio';
+const TOKEN = 'Bearer BQApSEwaPcNkHqAsk_fi6PNmdqbrBs1Rkr-C_0rBcMzTkpibFDQgi9segigS4xUKKcyGGhGyd0gLot4h13I';
 
 @Injectable({
   providedIn: 'root'
