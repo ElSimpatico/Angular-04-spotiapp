@@ -8,18 +8,23 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class SearchComponent implements OnInit {
   artistas: any[] = [];
-  constructor(private spotify: SpotifyService) { }
+  loading: boolean;
+  constructor(private spotify: SpotifyService) {}
 
   ngOnInit() {
   }
 
   buscar(termino: string) {
     console.log(termino);
-    this.spotify.getArtista(termino)
-      .subscribe((data: any) => {
-        console.log(data);
-        this.artistas = data;
-      });
-  }
+    if (termino && termino.length > 0) {
+      this.loading = true;
+      this.spotify.getArtista(termino)
+          .subscribe((data: any) => {
+            console.log(data);
+            this.artistas = data;
+            this.loading = false;
+          });
+      }
+    }
 
 }
