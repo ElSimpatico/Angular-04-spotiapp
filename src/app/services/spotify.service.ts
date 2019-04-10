@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 
-const TOKEN = 'Bearer BQCkQ57Y9G0wmB7B007W6coS7k6QEYZpe1co5S4rmmIpAkSWLx-12w6rm157hN5YoDP_2vMYIlhIVjaPfn4';
+const TOKEN = 'Bearer BQA2q6xeK2--U4xnAYVdk1iKv-gYfpf7lc9wNQqxqz_idpm5thMwlXkx4mweJqZ-wubjeodcPFhMgjOCF4Y';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +30,9 @@ export class SpotifyService {
 
   getArtista(id: string) {
     return this.getQuery(`artists/${id}`);
+  }
+
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/top-tracks?country=es`).pipe(map((data: any) => data.tracks));
   }
 }
